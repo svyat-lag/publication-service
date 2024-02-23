@@ -7,7 +7,7 @@ import org.springframework.data.redis.core.RedisHash;
 import java.util.List;
 
 @Data
-@RedisHash
+@RedisHash("Tariff")
 public class RedisTariff {
 
     @Id

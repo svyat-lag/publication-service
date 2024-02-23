@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
 @Data
-@RedisHash
+@RedisHash("Service")
 public class RedisService {
 
     @Id
