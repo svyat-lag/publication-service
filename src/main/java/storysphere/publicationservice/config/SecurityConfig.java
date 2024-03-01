@@ -14,9 +14,12 @@ public class SecurityConfig {
 
         http.
                 authorizeHttpRequests(
-                        authorize -> authorize.anyRequest().authenticated())
+                        authorize -> authorize
+                                .requestMatchers("/addPublication").permitAll()
+                                .anyRequest().authenticated() )
                 .oauth2ResourceServer(
-                        j -> j.jwt(Customizer.withDefaults()));
+                        j -> j.jwt(Customizer.withDefaults()) )
+                .csrf((csrf) -> csrf.disable());
 
         return http.build();
     }
