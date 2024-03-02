@@ -15,7 +15,7 @@ public class SecurityConfig {
         http.
                 authorizeHttpRequests(
                         authorize -> authorize
-                                .requestMatchers("/addPublication").permitAll()
+                                //.requestMatchers("/addPublication").permitAll()
                                 .anyRequest().authenticated() )
                 .oauth2ResourceServer(
                         j -> j.jwt(Customizer.withDefaults()) )
